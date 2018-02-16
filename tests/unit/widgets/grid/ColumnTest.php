@@ -94,5 +94,18 @@ class ColumnTest extends \Codeception\Test\Unit
             Console::ansiFormat('model', [Console::FG_GREEN]),
             $column->renderDataCell('model', 1, 0)
         );
+
+        $this->tester->wantTo('See same data as specified in content callback but formatted with callback');
+        $column = new Column;
+        $column->contentFormat = function ($model, $key, $index, $column) {
+            return [Console::FG_GREEN];
+        };
+        $column->content = function ($model, $key, $index) {
+            return $model;
+        };
+        $this->tester->assertEquals(
+            Console::ansiFormat('model', [Console::FG_GREEN]),
+            $column->renderDataCell('model', 1, 0)
+        );
     }
 }

@@ -8,7 +8,6 @@ use yii\data\ActiveDataProvider;
 use yii\data\ArrayDataProvider;
 use yii\db\ActiveQueryInterface;
 use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
 use yii\helpers\Inflector;
 
 /**
@@ -89,8 +88,6 @@ class DataColumn extends Column
                 $modelClass = $provider->modelClass;
                 $model = $modelClass::instance();
                 $label = $model->getAttributeLabel($this->attribute);
-            } elseif ($this->grid->filterModel !== null && $this->grid->filterModel instanceof Model) {
-                $label = $this->grid->filterModel->getAttributeLabel($this->attribute);
             } else {
                 $models = $provider->getModels();
                 if (($model = reset($models)) instanceof Model) {
