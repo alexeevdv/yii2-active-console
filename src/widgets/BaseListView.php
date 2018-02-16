@@ -171,7 +171,7 @@ abstract class BaseListView extends Widget
             $page = $pagination->getPage() + 1;
             $pageCount = $pagination->pageCount;
             if (($summaryContent = $this->summary) === null) {
-                return Yii::t('yii', 'Showing <b>{begin, number}-{end, number}</b> of <b>{totalCount, number}</b> {totalCount, plural, one{item} other{items}}.', [
+                return Yii::t('yii', 'Showing {begin, number}-{end, number} of {totalCount, number} {totalCount, plural, one{item} other{items}}.', [
                     'begin' => $begin,
                     'end' => $end,
                     'count' => $count,
@@ -184,7 +184,7 @@ abstract class BaseListView extends Widget
             $begin = $page = $pageCount = 1;
             $end = $totalCount = $count;
             if (($summaryContent = $this->summary) === null) {
-                return Yii::t('yii', 'Total <b>{count, number}</b> {count, plural, one{item} other{items}}.', [
+                return Yii::t('yii', 'Total {count, number} {count, plural, one{item} other{items}}.', [
                     'begin' => $begin,
                     'end' => $end,
                     'count' => $count,
@@ -211,6 +211,7 @@ abstract class BaseListView extends Widget
      */
     public function renderPager()
     {
+        return '';
         $pagination = $this->dataProvider->getPagination();
         if ($pagination === false || $this->dataProvider->getCount() <= 0) {
             return '';
@@ -230,6 +231,7 @@ abstract class BaseListView extends Widget
      */
     public function renderSorter()
     {
+        return '';
         $sort = $this->dataProvider->getSort();
         if ($sort === false || empty($sort->attributes) || $this->dataProvider->getCount() <= 0) {
             return '';
