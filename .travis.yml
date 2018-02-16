@@ -10,4 +10,4 @@ install:
 
 script:
     - vendor/bin/phpcs --standard=vendor/yiisoft/yii2-coding-standards/Yii2 --extensions=php src
-    - php vendor/bin/codecept run
+    - php vendor/bin/codecept run --coverage --coverage-xml
