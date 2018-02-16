@@ -5,7 +5,6 @@ namespace alexeevdv\console\widgets\grid;
 use Closure;
 use yii\base\BaseObject;
 use yii\helpers\Console;
-use yii\helpers\Html;
 
 /**
  * Class Column
