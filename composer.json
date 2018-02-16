@@ -1,0 +1,24 @@
+{
+    "name": "alexeevdv/yii2-active-console",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitry Alekseev",
+            "email": "mail@alexeevdv.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "alexeevdv\\console\\": "src"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "2.0.13.1"
+    }
+}
