@@ -20,5 +20,9 @@
     ],
     "require": {
         "yiisoft/yii2": "2.0.13.1"
+    },
+    "require-dev": {
+        "codeception/codeception": "^2.3",
+        "yiisoft/yii2-coding-standards": "^2.0"
     }
 }
